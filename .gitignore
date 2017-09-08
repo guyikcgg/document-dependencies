@@ -1,0 +1,6 @@
+# Ignore temporal files
+*~
+*.lyx#
+
+# Ignore `img` directory
+img
