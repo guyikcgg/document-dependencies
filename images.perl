@@ -1,5 +1,23 @@
 #!/usr/bin/perl
 
+# images.perl
+# print the relative path of the images included in a LyX file.
+#   Copyright (C) 2017  Cristian G Guerrero
+#
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation, either version 3 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
 # Libraries
 use Getopt::Long;
 
@@ -9,18 +27,18 @@ my $allpaths = "";
 
 # Usage
 sub Usage {
-	print 
+	print
 "Usage:\n
 \t$0 [--img-path\t<path to img directory (relative to .tex file)>] TeXfile\n";
 }
 
 # Get the options
 #    img-path      path to img directory (relative to .tex file)
-GetOptions("img-path=s" => \$path) 
+GetOptions("img-path=s" => \$path)
 or die Usage();
 
 # Read `filename` parameter
-my $filename = @ARGV[0] 
+my $filename = @ARGV[0]
 or die "No input file was specified\n";
 
 # Open the file into `MYINPUTFILE`
