@@ -137,7 +137,150 @@ Try to execute
 git_update_images
 \family default
 \series default
- and see what happens!
+ and see what happens with 
+\family typewriter
+\series bold
+git status
+\family default
+\series default
+!
+\end_layout
+
+\begin_layout Standard
+You will notice that many files are selected to be removed in the next commit.
+ Only the files
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\series bold
+img/E.png
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\series bold
+img/X.png
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\series bold
+img/A.png
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\series bold
+img/M.png
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\series bold
+img/P.png
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\series bold
+img/L.png
+\end_layout
+
+\begin_layout Standard
+will remain tracked by git.
+\end_layout
+
+\begin_layout Standard
+These are the only files in 
+\family typewriter
+\series bold
+img/
+\family default
+\series default
+ subdirectory needed by 
+\family typewriter
+\series bold
+example.lyx
+\family default
+\series default
+.
+ Any other file in this directory will be removed from git's
+\emph on
+ tracked files list
+\emph default
+ (not physically from the drive!).
+\end_layout
+
+\begin_layout Standard
+This is done by 
+\family typewriter
+\series bold
+rm –cached
+\family default
+\series default
+ command.
+ After this, all the files in 
+\family typewriter
+\series bold
+img/
+\family default
+\series default
+ needed by 
+\family typewriter
+\series bold
+example.lyx
+\family default
+\series default
+ are added to the tracked files list using 
+\family typewriter
+\series bold
+git add
+\family default
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+To get the list of the files on which 
+\family typewriter
+\series bold
+exmaple.lyx
+\family default
+\series default
+ depends, 
+\family typewriter
+\series bold
+images.perl
+\family default
+\series default
+ is executed.
+ This script parses the document, looking for every line containing the
+ 
+\begin_inset Quotes eld
+\end_inset
+
+img
+\begin_inset Quotes erd
+\end_inset
+
+ substring.
+ These lines are trimmed adequately in order to output a list with the path
+ of the images.
+ This list contains the paths found in the document, i.e.
+ the paths are relative to the path of the document, and is printed on 
+\family typewriter
+\series bold
+STDOUT
+\family default
+\series default
+.
 \end_layout
 
 \end_body
